@@ -5,22 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Dashboard - Algebra Education Revival</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f0f8ff; }
+    nav a { margin-right: 10px; }
+    article { max-width: 800px; margin: 0 auto; line-height: 1.6; text-align: center; }
+    h1, h2, h3 { color: #333; }
+    p { margin-bottom: 15px; font-size: 1.1em; }
+    .assistant { display: inline-block; margin: 20px; padding: 15px; background-color: #fff; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; }
+    .assistant img { width: 100px; height: 100px; border-radius: 50%; }
+    .assistant h3 { margin: 10px 0 5px; color: #007BFF; }
+    .dashboard { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px; }
+    .dashboard div { flex: 1; min-width: 200px; padding: 15px; background-color: #e6f0ff; border-radius: 10px; }
+    .dashboard h3 { font-size: 1.2em; }
+    a { color: #007BFF; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .logout { margin-top: 20px; }
     @media (max-width: 768px) {
-      section { padding: 10px; }
+      nav a { display: block; }
+      article { padding: 10px; }
+      .dashboard div { min-width: 100%; }
     }
   </style>
 </head>
 <body>
-  <section id="student" class="login">
-    <h2>Algebra Education Revival</h2>
-    <h3>Welcome back John</h3>
-    <p>ID: 123456 | Grade: 3</p>
-    <h4>Ask:</h4>
-    <div class="ask-section">
-      <!-- Placeholder for interactive content -->
-      <!-- Back-end integration pending -->
+  <header>
+    <h1>Algebra Education Revival</h1>
+    <nav>
+      <a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="parents.html">For Parents</a> | <a href="blog.html">Blog</a> | <a href="login.html">Login</a> | <a href="signup.html">Signup</a>
+    </nav>
+  </header>
+  <article>
+    <h1>Welcome to Your Algebra Adventure!</h1>
+    <p>Hi there, young algebra explorer! Let’s make math fun and easy together. Choose your assistant to guide you on your journey.</p>
+
+    <!-- AI Assistants Section -->
+    <h2>Meet Your Algebra Assistants</h2>
+    <div class="assistant" onclick="startLearning('Aimia')">
+      <img src="/images/aimia.jpg" alt="Aimia, your algebra assistant">
+      <h3>Aimia</h3>
+      <p>Your cheerful guide to mastering algebra!</p>
     </div>
-  </section>
+    <div class="assistant" onclick="startLearning('Efan')">
+      <img src="/images/efan.jpg" alt="Efan, your algebra assistant">
+      <h3>Efan</h3>
+      <p>Your curious buddy for solving equations!</p>
+    </div>
+
+    <!-- Learning Dashboard Section -->
+    <h2>Your Learning Dashboard</h2>
+    <div class="dashboard">
+      <div>
+        <h3>Your Plan</h3>
+        <!-- Placeholder: Backend will populate this dynamically -->
+        <p>Today, let’s work on combining terms like 2x + 3x. You’re ready to shine!</p>
+      </div>
+      <div>
+        <h3>Your Assignment</h3>
+        <!-- Placeholder: Backend will populate this dynamically -->
+        <p>Solve 5 simple equations, like 2x + 3 = 7. You’ve got this!</p>
+      </div>
+      <div>
+        <h3>Your Progress</h3>
+        <!-- Placeholder: Backend will populate this dynamically -->
+        <p>You’ve mastered 8 operations, like 2-5 and -2+5. Great job!</p>
+      </div>
+      <div>
+        <h3>Your Behavior</h3>
+        <!-- Placeholder: Backend will populate this dynamically -->
+        <p>You’re staying focused and curious—keep it up!</p>
+      </div>
+    </div>
+
+    <!-- Refresh Section -->
+    <h2>Need a Quick Refresh?</h2>
+    <p>Click your assistant to review basics like a+a, a+2, or 2-5, or to learn new concepts with confidence!</p>
+
+    <!-- Logout Button -->
+    <p class="logout"><a href="login.html">Log Out</a></p>
+  </article>
+
+  <script>
+    function startLearning(assistant) {
+      // Placeholder: Backend will provide personalized guidance based on student data
+      alert(`Hi! I’m ${assistant}, your algebra assistant. I see you’re working on combining terms today. Let’s start with 2x + 3x = 5x. Ready to practice?`);
+      // Future integration: Load personalized plan, refresh concepts, or guide to next task.
+      // Example: If student struggles with 2-5, assistant could say:
+      // "Let’s review 2-5! Imagine you have 2 apples, but you give away 5—you’d owe 3 apples, so it’s -3."
+    }
+  </script>
 </body>
 </html>
