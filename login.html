@@ -1,13 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>login</title>
+  <title>Login - Algebra Education Revival</title>
+  <style>
+    body { background: #FFFFFF; text-align: center; font-family: Arial; margin: 0; padding: 20px 30px; }
+    h1 { color: #6B7280; font-size: 24px; margin: 20px 0; }
+    .login-box { max-width: 400px; margin: 50px auto; }
+    input { width: 100%; padding: 10px; margin: 10px 0; font-size: 16px; border: 1px solid #374151; }
+    button { background: #6B7280; color: #FFFFFF; padding: 10px 20px; border: none; font-size: 16px; cursor: pointer; }
+    button:hover { background: #FBBF24; color: #000000; }
+    p { color: #374151; font-size: 16px; }
+  </style>
 </head>
 <body>
-  <h1>login</h1>
-  <p>Coming soon!</p>
-  <a href="index.html">Back to Home</a>
+  <h1>Algebra Education Revival</h1>
+  <div class="login-box">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="error" style="display: none;">Invalid credentials. Try again.</p>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSy...your-api-key...",
+  authDomain: "your-project-id.firebaseapp.com",
+  projectId: "your-project-id",
+  storageBucket: "your-project-id.appspot.com",
+  messagingSenderId: "123456789012",
+  appId: "1:123456789012:web:abcdef1234567890"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          window.location.href = '/elon';
+        })
+        .catch((error) => {
+          document.getElementById('error').style.display = 'block';
+        });
+    }
+  </script>
 </body>
 </html>
