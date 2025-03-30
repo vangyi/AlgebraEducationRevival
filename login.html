@@ -27,12 +27,11 @@
   <script>
     const firebaseConfig = {
       apiKey: "AIzaSyBzjsMrtSsz6PFiQj2hWiXVhVdyWvbQzyY",
-  authDomain: "algebraeducationrevival.firebaseapp.com",
-  projectId: "algebraeducationrevival",
-  storageBucket: "algebraeducationrevival.firebasestorage.app",
-  messagingSenderId: "375214593841",
-  appId: "1:375214593841:web:3995db8958abbb32018210",
-  measurementId: "G-0HCTVQZW9L"
+      authDomain: "algebraeducationrevival.firebaseapp.com",
+      projectId: "algebraeducationrevival",
+      storageBucket: "algebraeducationrevival.firebasestorage.app",
+      messagingSenderId: "375214593841",
+      appId: "1:375214593841:web:3995db8958abbb32018210"
     };
     firebase.initializeApp(firebaseConfig);
     console.log('Firebase initialized with config:', firebaseConfig);
@@ -40,11 +39,13 @@
     function login() {
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-      console.log('Attempting login with:', email); // Debug
+      console.log('Attempting login with:', email);
       firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
           console.log('Login successful, redirecting:', userCredential.user.uid);
-          window.location.href = '/elon';
+          // Test redirect explicitly
+          window.location.href = '/elon'; // Try relative
+          // window.location.href = 'http://algebraeducationrevival.com/elon'; // Try absolute (uncomment if needed)
         })
         .catch((error) => {
           console.error('Login failed:', error.code, error.message);
