@@ -43,8 +43,8 @@
       firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
           console.log('Login successful, redirecting:', userCredential.user.uid);
-          window.location.href = 'elon.html'; // Relative path with .html
-          // OR: window.location.href = 'https://vangyi.github.io/elon.html'; // Absolute path (uncomment if needed)
+          window.location.href = 'https://vangyi.github.io/elon.html' // Relative path with .html
+          // OR: window.location.href = 'elon.html'; // Absolute path (uncomment if needed)
         })
         .catch((error) => {
           console.error('Login failed:', error.code, error.message);
