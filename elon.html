@@ -31,9 +31,9 @@
   </div>
   <footer>aljbra.sensei@gmail.com | (651) 404-3626</footer>
 
-  <!-- Firebase v9 Compat SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <!-- Firebase v10 Compat SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
   <script>
     const firebaseConfig = {
       apiKey: "AIzaSyBzjsMrtSsz6PFiQj2hWiXVhVdyWvbQzyY",
@@ -42,10 +42,11 @@
   storageBucket: "algebraeducationrevival.firebasestorage.app",
   messagingSenderId: "375214593841",
   appId: "1:375214593841:web:3995db8958abbb32018210",
-  measurementId: "G-0HCTVQZW9L"   };
+  measurementId: "G-0HCTVQZW9L"
+    };
     firebase.initializeApp(firebaseConfig);
     console.log('Firebase initialized with config:', firebaseConfig);
-  
+
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get('token');
     if (token) {
@@ -60,7 +61,10 @@
     } else {
       firebase.auth().onAuthStateChanged((user) => {
         if (!user) {
+          console.error('No user authenticated, redirecting to login');
           window.location.href = '/login';
+        } else {
+          console.log('User authenticated:', user.uid);
         }
       });
     }
