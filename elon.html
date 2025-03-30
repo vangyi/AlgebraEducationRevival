@@ -45,7 +45,7 @@
   measurementId: "G-0HCTVQZW9L"
     };
     firebase.initializeApp(firebaseConfig);
-
+    console.log('Firebase initialized with config:', firebaseConfig);
     // Get token from URL
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get('token');
