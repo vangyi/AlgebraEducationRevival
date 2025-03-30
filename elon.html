@@ -31,9 +31,9 @@
   </div>
   <footer>aljbra.sensei@gmail.com | (651) 404-3626</footer>
 
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
+  <!-- Firebase v9 Compat SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
   <script>
     const firebaseConfig = {
       apiKey: "AIzaSyBzjsMrtSsz6PFiQj2hWiXVhVdyWvbQzyY",
@@ -45,25 +45,23 @@
   measurementId: "G-0HCTVQZW9L"
     };
     firebase.initializeApp(firebaseConfig);
-    console.log('Firebase initialized with config:', firebaseConfig);
-    // Get token from URL
+    console.log('Firebase initialized with config:', firebaseConfig); // Test line
+
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get('token');
-
     if (token) {
       firebase.auth().signInWithCustomToken(token)
         .then((userCredential) => {
           console.log('Logged in with token:', userCredential.user.uid);
-          // Stay on page
         })
         .catch((error) => {
           console.error('Token error:', error);
-          window.location.href = '/login'; // Fallback if token fails
+          window.location.href = '/login';
         });
     } else {
       firebase.auth().onAuthStateChanged((user) => {
         if (!user) {
-          window.location.href = '/login'; // Redirect if no token or logged out
+          window.location.href = '/login';
         }
       });
     }
