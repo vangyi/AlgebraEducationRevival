@@ -7,7 +7,7 @@
     h1 { color: #6B7280; font-size: 24px; border-bottom: 2px solid #FBBF24; margin: 20px auto; max-width: 800px; }
     h2 { color: #6B7280; font-size: 18px; margin: 10px 0; }
     .video { max-width: 800px; margin: 40px auto; }
-    video, iframe { width: 100%; height: 450px; border: none; display: none; } /* Centered, hidden */
+    video, iframe { width: 100%; height: 450px; border: none; display: none; }
     .demo-container { max-width: 800px; margin: 20px auto; }
     .demo-btn { background: #6B7280; color: #FFFFFF; padding: 10px 20px; margin: 15px; text-decoration: none; display: inline-block; }
     .demo-btn:hover { background: #FBBF24; color: #000000; }
@@ -23,7 +23,7 @@
   <div class="video">
     <h2>Disrupting Algebra Education: 5:59</h2>
     <p class="desc">This presentation introduces a groundbreaking and practical approach to addressing the algebra education crisis. Rooted in a results-driven methodology, this solution leverages a human-centered learning and problem-solving algorithm, in contrast to the revealing and supporting approach used by AI. Grok has already explored key features of this approach and recognizes its potential as a transformative solution in the field of math education.</p>
-    <button class="start-btn" onclick="startPresentation()">Click to Start Presentation</button>
+    <button class="start-btn" id="startPresentationBtn" onclick="startPresentation()">Click to Start Presentation</button>
     <p class="email-note">You can access this information from your email any time</p>
     <video id="presentation" controls>
       <source src="disrupting-algebra-education.mp4" type="video/mp4">
@@ -62,7 +62,8 @@
       projectId: "algebraeducationrevival",
       storageBucket: "algebraeducationrevival.firebasestorage.app",
       messagingSenderId: "375214593841",
-      appId: "Y1:375214593841:web:3995db8958abbb32018210"    };
+      appId: "1:375214593841:web:3995db8958abbb32018210"
+    };
     firebase.initializeApp(firebaseConfig);
     const analytics = firebase.analytics();
     console.log('Firebase initialized with config:', firebaseConfig);
@@ -97,7 +98,7 @@
 
     function startPresentation() {
       const video = document.getElementById('presentation');
-      const startBtn = document.querySelector('.start-btn');
+      const startBtn = document.getElementById('startPresentationBtn'); // Specific ID
       startBtn.style.display = 'none';
       video.style.display = 'block';
       video.play();
