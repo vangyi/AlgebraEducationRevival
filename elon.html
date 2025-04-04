@@ -6,9 +6,9 @@
     body { background: #FFFFFF; text-align: center; font-family: Arial; margin: 0; padding: 20px 30px; }
     h1 { color: #6B7280; font-size: 24px; border-bottom: 2px solid #FBBF24; margin: 20px auto; max-width: 800px; }
     h2 { color: #6B7280; font-size: 18px; margin: 10px 0; }
-    .video { max-width: 800px; margin: 40px auto; }
+    .video { max-width: 800px; margin: 60px auto; } /* Increased from 40px */
     video, iframe { width: 100%; height: 450px; border: none; display: none; }
-    .demo-container { max-width: 800px; margin: 20px auto; }
+    .demo-container { max-width: 800px; margin: 40px auto; } /* Increased from 20px */
     .start-btn { background: #FBBF24; color: #000000; padding: 12px 24px; margin: 20px 10px 20px 0; border: none; cursor: pointer; font-size: 16px; display: inline-block; }
     .start-btn:hover { background: #6B7280; color: #FFFFFF; }
     .desc { max-width: 800px; margin: 15px auto; color: #374151; font-size: 16px; text-align: left; }
@@ -32,9 +32,9 @@
     <button class="start-btn" id="demoBtn" onclick="showDemos()" style="display: none;">Click to Start Demos</button>
     <div id="demos" style="display: none;">
       <h2>Demo 1: Top 30% Students</h2>
-      <iframe id="demo1" src="https://www.youtube.com/embed/3c4xkXTcr80" allowfullscreen></iframe>
+      <iframe id="demo1" src="https://www.youtube.com/embed/3c4xkXTcr80" title="Demo 1: Top 30% Students" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <h2>Demo 2: Top 3% Students</h2>
-      <iframe id="demo2" src="https://www.youtube.com/embed/K7Hv3Og2egU" allowfullscreen></iframe>
+      <iframe id="demo2" src="https://www.youtube.com/embed/K7Hv3Og2egU" title="Demo 2: Top 3% Students" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <button class="start-btn" id="podcastBtn" onclick="showPodcast()" style="display: none;">Click to Start Podcast</button>
     </div>
     <div id="podcast" style="display: none;">
@@ -119,6 +119,8 @@
       const demoBtn = document.getElementById('demoBtn');
       demoBtn.style.display = 'none';
       demos.style.display = 'block';
+      document.getElementById('demo1').style.display = 'block';
+      document.getElementById('demo2').style.display = 'block';
       document.getElementById('podcastBtn').style.display = 'inline-block';
       analytics.logEvent('demos_viewed', { timestamp: new Date().toISOString() });
     }
