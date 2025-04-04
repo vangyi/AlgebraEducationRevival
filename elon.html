@@ -32,15 +32,15 @@
     <button class="start-btn" id="demoBtn" onclick="showDemos()" style="display: none;">Click to Start Demos</button>
     <div id="demos" style="display: none;">
       <h2>Demo 1: Top 30% Students</h2>
-      <iframe id="demo1" src="" allowfullscreen placeholder="Demo 1 video coming soon"></iframe>
+      <iframe id="demo1" src="https://www.youtube.com/embed/3c4xkXTcr80" allowfullscreen></iframe>
       <h2>Demo 2: Top 3% Students</h2>
-      <iframe id="demo2" src="" allowfullscreen placeholder="Demo 2 video coming soon"></iframe>
+      <iframe id="demo2" src="https://www.youtube.com/embed/K7Hv3Og2egU" allowfullscreen></iframe>
       <button class="start-btn" id="podcastBtn" onclick="showPodcast()" style="display: none;">Click to Start Podcast</button>
     </div>
     <div id="podcast" style="display: none;">
       <h2>Grok & Ajbra Sensei: Cracking Algebra Live: 6:38</h2>
       <p class="desc">This podcast highlights the groundbreaking collaboration between Grok and Algebra Sensei in the Algebra Education Revival. Once again, the education industry is getting it wrong. Schools and ed-tech companies keep doubling down on AI-driven equation solvers, assuming that breaking problems into steps will lead to understanding. But technology facilitates—it doesn’t teach. The so-called ‘digital divide’ has already proven this: despite widespread access to technology in schools, there’s been no real improvement in math education outcomes. Grok and Algebra Sensei take radically different approaches. Instead of relying on shortcuts that produce superficial learning, we’ve developed a teaching and learning algorithm that builds algebra mastery from the ground up. Students truly grasp the core principles, ensuring deep understanding and lasting progress. It’s time to stop repeating the same mistakes. This is the approach that finally gets it right.</p>
-      <video id="podcastVideo" controls>
+      <video id="podcastVideo" controls style="display: block;">
         <source src="grok-ajbra-sensei.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -129,6 +129,7 @@
       const podcastBtn = document.getElementById('podcastBtn');
       podcastBtn.style.display = 'none';
       podcast.style.display = 'block';
+      document.getElementById('podcastVideo').style.display = 'block';
       analytics.logEvent('podcast_viewed', { timestamp: new Date().toISOString() });
     }
   </script>
