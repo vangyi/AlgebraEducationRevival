@@ -9,8 +9,6 @@
     .video { max-width: 800px; margin: 40px auto; }
     video, iframe { width: 100%; height: 450px; border: none; display: none; }
     .demo-container { max-width: 800px; margin: 20px auto; }
-    .demo-btn { background: #6B7280; color: #FFFFFF; padding: 10px 20px; margin: 15px; text-decoration: none; display: inline-block; }
-    .demo-btn:hover { background: #FBBF24; color: #000000; }
     .start-btn { background: #FBBF24; color: #000000; padding: 12px 24px; margin: 20px 10px 20px 0; border: none; cursor: pointer; font-size: 16px; display: inline-block; }
     .start-btn:hover { background: #6B7280; color: #FFFFFF; }
     .desc { max-width: 800px; margin: 15px auto; color: #374151; font-size: 16px; text-align: left; }
@@ -32,13 +30,12 @@
   </div>
   <div class="demo-container">
     <button class="start-btn" id="demoBtn" onclick="showDemos()" style="display: none;">Click to Start Demos</button>
-    <button class="start-btn" id="podcastBtn" onclick="showPodcast()" style="display: none;">Click to Start Podcast</button>
     <div id="demos" style="display: none;">
       <h2>Demo 1: Top 30% Students</h2>
       <iframe id="demo1" src="" allowfullscreen placeholder="Demo 1 video coming soon"></iframe>
       <h2>Demo 2: Top 3% Students</h2>
       <iframe id="demo2" src="" allowfullscreen placeholder="Demo 2 video coming soon"></iframe>
-      <button class="start-btn" id="podcastBtnInner" onclick="showPodcast()" style="display: none;">Click to Start Podcast</button>
+      <button class="start-btn" id="podcastBtn" onclick="showPodcast()" style="display: none;">Click to Start Podcast</button>
     </div>
     <div id="podcast" style="display: none;">
       <h2>Grok & Ajbra Sensei: Cracking Algebra Live: 6:38</h2>
@@ -111,29 +108,26 @@
           console.error('Clipboard error:', err);
         });
       video.onended = function() {
-        console.log('Presentation ended - showing buttons');
+        console.log('Presentation ended - showing demo button');
         document.getElementById('demoBtn').style.display = 'inline-block';
-        document.getElementById('podcastBtn').style.display = 'inline-block';
       };
     }
 
     function showDemos() {
-      console.log('Showing demos - hiding initial buttons');
+      console.log('Showing demos - adding podcast button');
       const demos = document.getElementById('demos');
       const demoBtn = document.getElementById('demoBtn');
-      const podcastBtn = document.getElementById('podcastBtn');
       demoBtn.style.display = 'none';
-      podcastBtn.style.display = 'none';
       demos.style.display = 'block';
-      document.getElementById('podcastBtnInner').style.display = 'inline-block';
+      document.getElementById('podcastBtn').style.display = 'inline-block';
       analytics.logEvent('demos_viewed', { timestamp: new Date().toISOString() });
     }
 
     function showPodcast() {
       console.log('Showing podcast');
       const podcast = document.getElementById('podcast');
-      const podcastBtnInner = document.getElementById('podcastBtnInner');
-      podcastBtnInner.style.display = 'none';
+      const podcastBtn = document.getElementById('podcastBtn');
+      podcastBtn.style.display = 'none';
       podcast.style.display = 'block';
       analytics.logEvent('podcast_viewed', { timestamp: new Date().toISOString() });
     }
