@@ -62,7 +62,7 @@
       projectId: "algebraeducationrevival",
       storageBucket: "algebraeducationrevival.firebasestorage.app",
       messagingSenderId: "375214593841",
-      appId: "1:375214593841:web:3995db8958abbb32018210"
+      appId: "1:375214593841:web:3995db8958abbb32018210",
     };
     firebase.initializeApp(firebaseConfig);
     const analytics = firebase.analytics();
@@ -98,7 +98,7 @@
 
     function startPresentation() {
       const video = document.getElementById('presentation');
-      const startBtn = document.getElementById('startPresentationBtn'); // Specific ID
+      const startBtn = document.getElementById('startPresentationBtn');
       startBtn.style.display = 'none';
       video.style.display = 'block';
       video.play();
@@ -111,12 +111,14 @@
           console.error('Clipboard error:', err);
         });
       video.onended = function() {
+        console.log('Presentation ended - showing buttons');
         document.getElementById('demoBtn').style.display = 'inline-block';
         document.getElementById('podcastBtn').style.display = 'inline-block';
       };
     }
 
     function showDemos() {
+      console.log('Showing demos - hiding initial buttons');
       const demos = document.getElementById('demos');
       const demoBtn = document.getElementById('demoBtn');
       const podcastBtn = document.getElementById('podcastBtn');
@@ -128,6 +130,7 @@
     }
 
     function showPodcast() {
+      console.log('Showing podcast');
       const podcast = document.getElementById('podcast');
       const podcastBtnInner = document.getElementById('podcastBtnInner');
       podcastBtnInner.style.display = 'none';
