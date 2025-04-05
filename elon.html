@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>For Elon Musk - Algebra Education Revival</title>
@@ -15,7 +16,7 @@
     #demo1 { margin-bottom: 20px; }
     #podcast { display: none; margin-top: 10px; }
     .start-btn { background: #FBBF24; color: #000000; padding: 12px 24px; margin: 10px 0 0 0; border: none; cursor: pointer; font-size: 16px; display: none; }
-    .start-btn:hover { background: #FBBF24; color: #FFFFFF; }
+    .start-btn:hover { background: #6B7280; color: #FFFFFF; }
     #startPresentationBtn { margin-top: 5px; display: inline-block; }
     #demoBtn { margin: 10px auto 0; display: block; }
     #podcastBtn { display: none; margin: 20px auto 0; visibility: hidden; }
@@ -38,7 +39,7 @@
     </video>
     <br>
     <button class="start-btn" id="demoBtn" onclick="showDemos()" style="display: none;">Click to Start Demos</button>
-    <p class="email-note" id="demoContact" style="display: none;">Contact: aljbra.sensei@gmail.com | 651-404-3626</p>
+    <p class="email-note" id="demoContact" style="display: none;">Contact: aljbra.sensei.com | 651-404-3626</p>
   </div>
   <div class="demo-container">
     <div id="demos">
@@ -58,16 +59,23 @@
           <source src="grok-ajbra-sensei.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <p class="email-note">Contact: aljbra.sensei@gmail.com | 651-404-3626</p>
+        <p class="email-note">Contact: aljbra.sensei.com | 651-404-3626</p>
       </div>
     </div>
   </div>
 
-  <!-- Firebase v10 Compat SDK + Analytics -->
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
   <script>
+    const passcode = prompt('Enter passcode from Algebra Sensei’s X bio or email:');
+    if (passcode === 'elon2025') {
+      console.log('Access granted');
+    } else {
+      console.log('Access denied');
+      window.location.href = 'access-denied.html'; // Or blank page
+    }
+
     const firebaseConfig = {
       apiKey: "AIzaSyBzjsMrtSsz6PFiQj2hWiXVhVdyWvbQzyY",
       authDomain: "algebraeducationrevival.firebaseapp.com",
@@ -109,7 +117,7 @@
     }
 
     function startPresentation() {
-      const video = document.getElementById('presentation'); // Fixed typo
+      const video = document.getElementById('presentation');
       const startBtn = document.getElementById('startPresentationBtn');
       startBtn.style.display = 'none';
       video.style.display = 'block';
