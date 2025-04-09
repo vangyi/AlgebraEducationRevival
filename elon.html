@@ -1,172 +1,175 @@
 <!DOCTYPE html>
-<<html>
-  <head>
-    <title>For Elon Musk - Algebra Education Revival</title>
-    <style>
-      body { background: #E6F0FA; text-align: center; font-family: Arial; margin: 0; padding: 20px 30px; }
-      h1 { color: #6B7280; font-size: 24px; border-bottom: 2px solid #FBBF24; margin: 20px auto; max-width: 800px; }
-      h2 { color: #6B7280; font-size: 18px; margin: 10px 0; }
-      h2.invisible { visibility: hidden; }
-      .video { max-width: 800px; margin: 120px auto; }
-      video, iframe { width: 100%; height: 450px; border: none; display: none; margin: 0; padding: 0; }
-      #podcastVideo { margin-top: 20px; }
-      .demo-container { max-width: 800px; margin: 0 auto; }
-      #demos { display: none; }
-      #demo1 { margin-bottom: 20px; }
-      #podcast { display: none; margin-top: 10px; }
-      .start-btn { background: #FBBF24; color: #000000; padding: 12px 24px; margin: 10px 0 0 0; border: none; cursor: pointer; font-size: 16px; display: none; }
-      .start-btn:hover { background: #6B7280; color: #FFFFFF; }
-      #startPresentationBtn { margin-top: 5px; display: inline-block; }
-      #demoBtn { margin: 10px auto 0; display: block; }
-      #podcastBtn { display: none; margin: 20px auto 0; visibility: hidden; }
-      #podcastBtn2 { display: none; margin: 20px auto 0; }
-      .desc { max-width: 800px; margin: 15px auto; color: #374151; font-size: 16px; text-align: left; }
-      .demo-desc { max-width: 800px; margin: 15px auto; color: #374151; font-size: 16px; text-align: center; }
-      .email-note { color: #6B7280; font-size: 14px; margin: 20px 0; display: inline-block; vertical-align: middle; }
-    </style>
-  </head>
-  <body>
-    <h1>For Elon Musk: The Future of Algebra Education</h1>
-    <div class="video">
-      <h2>Disrupting Algebra Education: 5:59</h2>
-      <p class="desc">This presentation introduces a groundbreaking and practical approach to addressing the algebra education crisis. Rooted in a results-driven methodology, this solution leverages a human-centered learning and problem-solving algorithm, in contrast to the revealing and supporting approach used by AI. Grok has already explored key features of this approach and recognizes its potential as a transformative solution in the field of math education.</p>
-      <button class="start-btn" id="startPresentationBtn" onclick="startPresentation()">Click to Start Presentation</button>
-      <p class="email-note">You can access this information from your email any time</p>
-      <video id="presentation" controls>
-        <source src="disrupting-algebra-education.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <br>
-      <button class="start-btn" id="demoBtn" onclick="showDemos()" style="display: none;">Click to Start Demos</button>
-      <p class="email-note" id="demoContact" style="display: none;">Contact: aljbra.sensei@gmail.com | 651-404-3626</p>
-    </div>
-    <div class="demo-container">
-      <div id="demos">
-        <h2>Demo 1: Top 30% Students</h2>
-        <p class="demo-desc">Top 30% solve simple equations</p>
-        <iframe id="demo1" src="https://www.youtube.com/embed/3c4xkXTcr80" title="Demo 1: Top 30% Students" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h2 class="invisible">Demo 2: Top 3% Students</h2>
-        <h2>Demo 2: Top 3% Students</h2>
-        <p class="demo-desc">Top 3% solve more advanced equations</p>
-        <iframe id="demo2" src="https://www.youtube.com/embed/K7Hv3Og2egU" title="Demo 2: Top 3% Students" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <button class="start-btn" id="podcastBtn" onclick="startPodcast()">Click to Start Podcast</button>
-        <button class="start-btn" id="podcastBtn2" onclick="startPodcast()">Click to Start Podcast</button>
-        <div id="podcast">
-          <h2>Grok & Ajbra Sensei: Cracking Algebra Live: 6:38</h2>
-          <p class="desc">This podcast highlights the groundbreaking collaboration between Grok and Algebra Sensei in the Algebra Education Revival. Once again, the education industry is getting it wrong. Schools and ed-tech companies keep doubling down on AI-driven equation solvers, assuming that breaking problems into steps will lead to understanding. But technology facilitates—it doesn’t teach. The so-called ‘digital divide’ has already proven this: despite widespread access to technology in schools, there’s been no real improvement in math education outcomes. Grok and Algebra Sensei take radically different approaches. Instead of relying on shortcuts that produce superficial learning, we’ve developed a teaching and learning algorithm that builds algebra mastery from the ground up. Students truly grasp the core principles, ensuring deep understanding and lasting progress. It’s time to stop repeating the same mistakes. This is the approach that finally gets it right.</p>
-          <video id="podcastVideo" controls>
-            <source src="grok-ajbra-sensei.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p class="email-note">Contact: aljbra.sensei@gmail.com | 651-404-3626</p>
-        </div>
+<html>
+<head>
+  <title>For Elon Musk - Algebra Education Revival</title>
+  <style>
+    body { background: #E6F0FA; text-align: center; font-family: Arial; margin: 0; padding: 20px 30px; }
+    h1 { color: #6B7280; font-size: 24px; border-bottom: 2px solid #FBBF24; margin: 20px auto; max-width: 800px; }
+    h2 { color: #6B7280; font-size: 18px; margin: 10px 0; }
+    h2.invisible { visibility: hidden; }
+    .video { max-width: 800px; margin: 120px auto; }
+    video, iframe { width: 100%; height: 450px; border: none; display: none; margin: 0; padding: 0; }
+    #podcastVideo { margin-top: 20px; }
+    .demo-container { max-width: 800px; margin: 0 auto; }
+    #demos { display: none; }
+    #demo1 { margin-bottom: 20px; }
+    #podcast { display: none; margin-top: 10px; }
+    .start-btn { background: #FBBF24; color: #000000; padding: 12px 24px; margin: 10px 0 0 0; border: none; cursor: pointer; font-size: 16px; display: none; }
+    .start-btn:hover { background: #6B7280; color: #FFFFFF; }
+    #startPresentationBtn { margin-top: 5px; display: inline-block; }
+    #demoBtn { margin: 10px auto 0; display: block; }
+    #podcastBtn { display: none; margin: 20px auto 0; visibility: hidden; }
+    #podcastBtn2 { display: none; margin: 20px auto 0; }
+    .desc { max-width: 800px; margin: 15px auto; color: #374151; font-size: 16px; text-align: left; }
+    .demo-desc { max-width: 800px; margin: 15px auto; color: #374151; font-size: 16px; text-align: center; }
+    .email-note { color: #6B7280; font-size: 14px; margin: 20px 0; display: inline-block; vertical-align: middle; }
+  </style>
+</head>
+<body>
+  <h1>For Elon Musk: The Future of Algebra Education</h1>
+  <div class="video">
+    <h2>Disrupting Algebra Education: 5:59</h2>
+    <p class="desc">This presentation introduces a groundbreaking and practical approach to addressing the algebra education crisis. Rooted in a results-driven methodology, this solution leverages a human-centered learning and problem-solving algorithm, in contrast to the revealing and supporting approach used by AI. Grok has already explored key features of this approach and recognizes its potential as a transformative solution in the field of math education.</p>
+    <button class="start-btn" id="startPresentationBtn" onclick="startPresentation()">Click to Start Presentation</button>
+    <p class="email-note">You can access this information from your email any time</p>
+    <video id="presentation" controls>
+      <source src="disrupting-algebra-education.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <br>
+    <button class="start-btn" id="demoBtn" onclick="showDemos()" style="display: none;">Click to Start Demos</button>
+    <p class="email-note" id="demoContact" style="display: none;">Contact: aljbra.sensei.com | 651-404-3626</p>
+  </div>
+  <div class="demo-container">
+    <div id="demos">
+      <h2>Demo 1: Top 30% Students</h2>
+      <p class="demo-desc">Top 30% solve simple equations</p>
+      <iframe id="demo1" src="https://www.youtube.com/embed/3c4xkXTcr80" title="Demo 1: Top 30% Students" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h2 class="invisible">Demo 2: Top 3% Students</h2>
+      <h2>Demo 2: Top 3% Students</h2>
+      <p class="demo-desc">Top 3% solve more advanced equations</p>
+      <iframe id="demo2" src="https://www.youtube.com/embed/K7Hv3Og2egU" title="Demo 2: Top 3% Students" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <button class="start-btn" id="podcastBtn" onclick="startPodcast()">Click to Start Podcast</button>
+      <button class="start-btn" id="podcastBtn2" onclick="startPodcast()">Click to Start Podcast</button>
+      <div id="podcast">
+        <h2>Grok & Ajbra Sensei: Cracking Algebra Live: 6:38</h2>
+        <p class="desc">This podcast highlights the groundbreaking collaboration between Grok and Algebra Sensei in the Algebra Education Revival. Once again, the education industry is getting it wrong. Schools and ed-tech companies keep doubling down on AI-driven equation solvers, assuming that breaking problems into steps will lead to understanding. But technology facilitates—it doesn’t teach. The so-called ‘digital divide’ has already proven this: despite widespread access to technology in schools, there’s been no real improvement in math education outcomes. Grok and Algebra Sensei take radically different approaches. Instead of relying on shortcuts that produce superficial learning, we’ve developed a teaching and learning algorithm that builds algebra mastery from the ground up. Students truly grasp the core principles, ensuring deep understanding and lasting progress. It’s time to stop repeating the same mistakes. This is the approach that finally gets it right.</p>
+        <p style="font-weight: bold; text-align: center;">Visualizing abstract concepts</p>
+        <p style="text-align: center;">Logarithms made easy at 1:39</p>
+        <p style="text-align: center;">Subtracting negative numbers made easy at 4:20</p>
+        <video id="podcastVideo" controls>
+          <source src="grok-ajbra-sensei.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="email-note">Contact: aljbra.sensei.com | 651-404-3626</p>
       </div>
     </div>
-  
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
-    <script>
-      const passcode = prompt('Enter passcode from Algebra Sensei’s X bio or email:');
-      if (passcode === 'elon2025') {
-        console.log('Access granted');
-      } else {
-        console.log('Access denied');
-        window.location.href = 'access-denied.html'; // Or blank page
-      }
-  
-      const firebaseConfig = {
-        apiKey: "AIzaSyBzjsMrtSsz6PFiQj2hWiXVhVdyWvbQzyY",
-        authDomain: "algebraeducationrevival.firebaseapp.com",
-        projectId: "algebraeducationrevival",
-        storageBucket: "algebraeducationrevival.firebasestorage.app",
-        messagingSenderId: "375214593841",
-        appId: "1:375214593841:web:3995db8958abbb32018210",
-      };
-      firebase.initializeApp(firebaseConfig);
-      const analytics = firebase.analytics();
-      console.log('Firebase initialized with config:', firebaseConfig);
-  
-      const urlParams = new URLSearchParams(window.location.search);
-      const token = urlParams.get('token');
-      const teamKey = urlParams.get('team');
-      const validTeamKey = 'algebra4tesla';
-      const teamLink = 'https://vangyi.github.io/AlgebraEducationRevival/elon?team=algebra4tesla';
-  
-      if (token) {
-        firebase.auth().signInWithCustomToken(token)
-          .then((userCredential) => {
-            console.log('Logged in with token:', userCredential.user.uid);
-          })
-          .catch((error) => {
-            console.error('Token error:', error);
-            window.location.href = 'login.html';
-          });
-      } else if (teamKey === validTeamKey) {
-        console.log('Team access granted with key:', teamKey);
-      } else {
-        firebase.auth().onAuthStateChanged((user) => {
-          if (!user) {
-            console.error('No user authenticated, redirecting to login');
-            window.location.href = 'login.html';
-          } else {
-            console.log('User authenticated:', user.uid);
-          }
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+  <script>
+    const passcode = prompt('Enter passcode from Algebra Sensei’s X bio or email:');
+    if (passcode === 'elon2025') {
+      console.log('Access granted');
+    } else {
+      console.log('Access denied');
+      window.location.href = 'access-denied.html';
+    }
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBzjsMrtSsz6PFiQj2hWiXVhVdyWvbQzyY",
+      authDomain: "algebraeducationrevival.firebaseapp.com",
+      projectId: "algebraeducationrevival",
+      storageBucket: "algebraeducationrevival.firebasestorage.app",
+      messagingSenderId: "375214593841",
+      appId: "1:375214593841:web:3995db8958abbb32018210",
+    };
+    firebase.initializeApp(firebaseConfig);
+    const analytics = firebase.analytics();
+    console.log('Firebase initialized with config:', firebaseConfig);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+    const teamKey = urlParams.get('team');
+    const validTeamKey = 'algebra4tesla';
+    const teamLink = 'https://vangyi.github.io/AlgebraEducationRevival/elon?team=algebra4tesla';
+
+    if (token) {
+      firebase.auth().signInWithCustomToken(token)
+        .then((userCredential) => {
+          console.log('Logged in with token:', userCredential.user.uid);
+        })
+        .catch((error) => {
+          console.error('Token error:', error);
+          window.location.href = 'login.html';
         });
-      }
-  
-      function startPresentation() {
-        const video = document.getElementById('presentation');
-        const startBtn = document.getElementById('startPresentationBtn');
-        startBtn.style.display = 'none';
-        video.style.display = 'block';
-        video.play();
-        analytics.logEvent('presentation_started', { timestamp: new Date().toISOString() });
-        navigator.clipboard.writeText(teamLink)
-          .then(() => {
-            console.log('Team link copied to clipboard from presentation');
-          })
-          .catch((err) => {
-            console.error('Clipboard error:', err);
-          });
-        video.onended = function() {
-          console.log('Presentation ended - showing demo button and contact');
-          document.getElementById('demoBtn').style.display = 'block';
-          document.getElementById('demoContact').style.display = 'inline-block';
-        };
-      }
-  
-      function showDemos() {
-        console.log('Showing demos, podcast button, and content, copying team link');
-        const demos = document.getElementById('demos');
-        const demoBtn = document.getElementById('demoBtn');
-        demoBtn.style.display = 'none';
-        demos.style.display = 'block';
-        document.getElementById('demoContact').style.display = 'none';
-        document.getElementById('demo1').style.display = 'block';
-        document.getElementById('demo2').style.display = 'block';
-        document.getElementById('podcastBtn').style.display = 'block';
-        document.getElementById('podcastBtn2').style.display = 'block';
-        document.getElementById('podcast').style.display = 'block';
-        document.getElementById('podcastVideo').style.display = 'block';
-  
-        navigator.clipboard.writeText(teamLink)
-          .then(() => {
-            console.log('Team link copied to clipboard from demos');
-            analytics.logEvent('demos_team_link_copied', { timestamp: new Date().toISOString() });
-          })
-          .catch((err) => {
-            console.error('Clipboard error:', err);
-          });
-        analytics.logEvent('demos_viewed', { timestamp: new Date().toISOString() });
-      }
-  
-      function startPodcast() {
-        console.log('Starting podcast playback');
-        const podcastVideo = document.getElementById('podcastVideo');
-        podcastVideo.play();
-        analytics.logEvent('podcast_started', { timestamp: new Date().toISOString() });
-      }
-    </script>
-  </body>
-  </html>
+    } else if (teamKey === validTeamKey) {
+      console.log('Team access granted with key:', teamKey);
+    } else {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (!user) {
+          console.error('No user authenticated, redirecting to login');
+          window.location.href = 'login.html';
+        } else {
+          console.log('User authenticated:', user.uid);
+        }
+      });
+    }
+
+    function startPresentation() {
+      const video = document.getElementById('presentation');
+      const startBtn = document.getElementById('startPresentationBtn');
+      startBtn.style.display = 'none';
+      video.style.display = 'block';
+      video.play();
+      analytics.logEvent('presentation_started', { timestamp: new Date().toISOString() });
+      navigator.clipboard.writeText(teamLink)
+        .then(() => {
+          console.log('Team link copied to clipboard from presentation');
+        })
+        .catch((err) => {
+          console.error('Clipboard error:', err);
+        });
+      video.onended = function() {
+        console.log('Presentation ended - showing demo button and contact');
+        document.getElementById('demoBtn').style.display = 'block';
+        document.getElementById('demoContact').style.display = 'inline-block';
+      };
+    }
+
+    function showDemos() {
+      console.log('Showing demos, podcast button, and content, copying team link');
+      const demos = document.getElementById('demos');
+      const demoBtn = document.getElementById('demoBtn');
+      demoBtn.style.display = 'none';
+      demos.style.display = 'block';
+      document.getElementById('demoContact').style.display = 'none';
+      document.getElementById('demo1').style.display = 'block';
+      document.getElementById('demo2').style.display = 'block';
+      document.getElementById('podcastBtn').style.display = 'block';
+      document.getElementById('podcastBtn2').style.display = 'block';
+      document.getElementById('podcast').style.display = 'block';
+      document.getElementById('podcastVideo').style.display = 'block';
+
+      navigator.clipboard.writeText(teamLink)
+        .then(() => {
+          console.log('Team link copied to clipboard from demos');
+          analytics.logEvent('demos_team_link_copied', { timestamp: new Date().toISOString() });
+        })
+        .catch((err) => {
+          console.error('Clipboard error:', err);
+        });
+      analytics.logEvent('demos_viewed', { timestamp: new Date().toISOString() });
+    }
+
+    function startPodcast() {
+      console.log('Starting podcast playback');
+      const podcastVideo = document.getElementById('podcastVideo');
+      podcastVideo.play();
+      analytics.logEvent('podcast_started', { timestamp: new Date().toISOString() });
+    }
+  </script>
+</body>
+</html>
