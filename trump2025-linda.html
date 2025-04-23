@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -77,9 +76,13 @@
       gap: 20px;
       margin: 20px 0;
     }
-    .demo-videos video {
+    .demo-videos iframe {
       max-width: 90%;
       border-radius: 5px;
+    }
+    .spacer {
+      height: 40px;
+      background: transparent;
     }
     .cta {
       font-weight: bold;
@@ -93,6 +96,12 @@
       border-radius: 5px;
       margin-top: 20px;
     }
+    .error-message {
+      color: #b22222;
+      font-size: 1.2em;
+      margin: 20px 0;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -105,23 +114,44 @@
     <p>At Algebra Education Revival, the Algebra Whisperer—an engineer with a proven track record—presents <em>Trump2025</em>: the solution to transform math education.</p>
     <p>80% of U.S. kids fail math, and the DOE’s $3T system betrays them. <em>Trump2025</em>’s 70% success rate, tested in a zero-risk D.C. trial, delivers results. Leverage your $14K per kid to empower students. Linda, lead the charge to fix math education now!</p>
     <h2><em>Trump2025</em>: 3 Minutes and 38 Seconds to Transform U.S. Algebra Education</h2>
-    <a href="Ed-Linda-Presentation.mp4" class="play-button">Play Presentation</a>
-    <h2>See <em>Trump2025</em> in Action</h2>
+    <a href="#" class="play-button" onclick="playPresentation()">Play Presentation</a>
+    <p class="error-message" id="video-error">Sorry, the presentation video failed to load. Please try again or contact <a href="https://x.com/aljbrasensei">@aljbrasensei</a>.</p>
     <p class="demo-message">Explore Demo Below</p>
     <div class="demo-videos">
-      <video id="demo1" controls>
-        <source src="demo1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <video id="demo2" controls>
-        <source src="demo2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/3c4xkXTcr80" title="Demo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="spacer"></div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/K7Hv3Og2egU" title="Demo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <p class="cta">Act now! Share with Trump and Elon. Contact <a href="https://x.com/aljbrasensei">@aljbrasensei</a> on X.</p>
     <div class="algebra-flair">
       <p>Bypass the establishment. Build a platform for U.S. kids to compete globally.</p>
     </div>
   </div>
+  <script>
+    function playPresentation() {
+      const video = document.createElement('video');
+      video.src = 'Ed-Linda-Presentation.mp4';
+      video.controls = true;
+      video.style.position = 'fixed';
+      video.style.top = '0';
+      video.style.left = '0';
+      video.style.width = '100%';
+      video.style.height = '100%';
+      video.style.zIndex = '1000';
+      video.onended = () => {
+        video.remove();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+      video.onerror = () => {
+        document.getElementById('video-error').style.display = 'block';
+        video.remove();
+      };
+      document.body.appendChild(video);
+      video.play().catch(() => {
+        document.getElementById('video-error').style.display = 'block';
+        video.remove();
+      });
+    }
+  </script>
 </body>
 </html>
